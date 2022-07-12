@@ -1,0 +1,30 @@
+label {
+  color: rgb(2, 95, 2);
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.icon {
+  color: rgb(19, 179, 19);
+  background-color: white;
+  font-size: 1.2rem;
+  border-right: 1px solid rgb(185, 185, 185);
+}
+
+.keyboardShow {
+  color: rgb(19, 179, 19);
+  background-color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+.input-area {
+  background-color: white;
+  padding: 5px;
+  border-radius: 8px;
+}

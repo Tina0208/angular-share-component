@@ -1,0 +1,19 @@
+.number {
+  width: 21%;
+  border: 1px solid green;
+  border-radius: 10px;
+  color: green;
+  font-weight: bolder;
+  margin-right: 2%;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.number:hover {
+  background-color: green;
+  color: white;
+}
+
+.number:nth-child(4),.number:nth-child(8),.number:nth-child(12) {
+  margin-right: 0px;
+}

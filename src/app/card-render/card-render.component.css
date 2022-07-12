@@ -1,0 +1,22 @@
+.wrap {
+  width: 25%;
+  min-width: 340px;
+  height: fit-content;
+  background-color: rgb(238, 235, 235);
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.passInput {
+  width: 50%;
+}
+
+button {
+  background-color: rgba(255, 116, 2, 0.87);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto;
+}
