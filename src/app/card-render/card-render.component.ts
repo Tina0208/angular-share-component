@@ -11,7 +11,8 @@ export class CardRenderComponent implements OnInit {
   title1:string = "金融卡密碼";
   icon1:string = "fa-solid fa-unlock-keyhole";
   placeholder1:string = "請輸入6-12碼";
-  inputValue:Array<string> = [];
+  inputValue1:Array<string> = [];
+  inputValue2:Array<string> = [];
   inputComponent?:string;
   keyboardIcon:string = "fa-solid fa-keyboard";
   @ViewChild('input1') input1!: InputComponent;
@@ -24,21 +25,27 @@ export class CardRenderComponent implements OnInit {
 
   //數字鍵盤點擊method
   getNumber(e:any){
-    if(e === "修改"){
-      this.inputValue.pop();
-    }else if(e === "清除"){
-      this.inputValue = [];
-    }else {
-      this.inputValue.push(e);
-    }
-
     //判斷針對哪個input進行輸入
     switch(this.inputComponent){
       case 'input1':
-        this.input1.value = this.inputValue.join('');
+        if(e === "修改"){
+          this.inputValue1.pop();
+        }else if(e === "清除"){
+          this.inputValue1 = [];
+        }else {
+          this.inputValue1.push(e);
+        }
+        this.input1.value = this.inputValue1.join('');
         break;
       case 'input2':
-        this.input2.value = this.inputValue.join('');
+        if(e === "修改"){
+          this.inputValue2.pop();
+        }else if(e === "清除"){
+          this.inputValue2 = [];
+        }else {
+          this.inputValue2.push(e);
+        }
+        this.input2.value = this.inputValue2.join('');
         break;
       default:
         break;
