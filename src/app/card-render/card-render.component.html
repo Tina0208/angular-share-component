@@ -1,9 +1,9 @@
 <div class="wrap p-4">
 
 <!-- 插入讀卡機 -->
-<app-input #input1 (click)="focus('input1')"></app-input>
+<app-input #input1 (click)="focus('input1')" (onChange)="inputValue1 = $event"></app-input>
 <!-- 金融卡密碼 -->
-<app-input #input2 class="passInput" [title]="title1" [icon]="icon1" [placeholder]="placeholder1" (click)="focus('input2')" [keyboardIcon]="keyboardIcon" (keyboardShowEvent)="keyboardShow($event)"></app-input>
+<app-input #input2 class="passInput" [title]="title1" [icon]="icon1" [placeholder]="placeholder1" (click)="focus('input2')" [keyboardIcon]="keyboardIcon" (keyboardShowEvent)="keyboardShow($event)" (onChange)="inputValue2 = $event"></app-input>
 <!-- 數字鍵盤 -->
 <app-keyboard (clickNumberEvent)="getNumber($event)"></app-keyboard>
 <button class="p-3 px-4 mt-3 d-block">登入</button>

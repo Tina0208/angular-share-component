@@ -11,8 +11,10 @@ export class CardRenderComponent implements OnInit {
   title1:string = "金融卡密碼";
   icon1:string = "fa-solid fa-unlock-keyhole";
   placeholder1:string = "請輸入6-12碼";
-  inputValue1:Array<string> = [];
-  inputValue2:Array<string> = [];
+  // inputValue1:Array<string> = [];
+  // inputValue2:Array<string> = [];
+  inputValue1:string = "";
+  inputValue2:string = "";
   inputComponent?:string;
   keyboardIcon:string = "fa-solid fa-keyboard";
   @ViewChild('input1') input1!: InputComponent;
@@ -28,24 +30,30 @@ export class CardRenderComponent implements OnInit {
     //判斷針對哪個input進行輸入
     switch(this.inputComponent){
       case 'input1':
+        console.log(e);
         if(e === "修改"){
-          this.inputValue1.pop();
+          const arr = this.inputValue1.split('');
+          arr.pop();
+          this.inputValue1 = arr.join('');
         }else if(e === "清除"){
-          this.inputValue1 = [];
+          this.inputValue1 = "";
         }else {
-          this.inputValue1.push(e);
+          this.inputValue1 += e;
         }
-        this.input1.value = this.inputValue1.join('');
+        this.input1.value = this.inputValue1;
         break;
       case 'input2':
+        console.log(e);
         if(e === "修改"){
-          this.inputValue2.pop();
+          const arr = this.inputValue2.split('');
+          arr.pop();
+          this.inputValue2 = arr.join('');
         }else if(e === "清除"){
-          this.inputValue2 = [];
+          this.inputValue2 = "";
         }else {
-          this.inputValue2.push(e);
+          this.inputValue2 += e;
         }
-        this.input2.value = this.inputValue2.join('');
+        this.input2.value = this.inputValue2;
         break;
       default:
         break;

@@ -14,7 +14,7 @@ show:boolean = true; //傳送數字鍵盤是否顯示
 @Input() value:string = ""; //input欄位輸入的值
 @Input() keyboardIcon:string = "";
 @Output() keyboardShowEvent = new EventEmitter();
-
+@Output() onChange = new EventEmitter();
 
   constructor() { }
 
@@ -26,4 +26,8 @@ show:boolean = true; //傳送數字鍵盤是否顯示
     this.show = !this.show; //toggle傳送的值
     this.keyboardShowEvent.emit(this.show); //值送到父層CardRendorComponent
   }
+
+  change() {
+    this.onChange.emit(this.value);
+}
 }
